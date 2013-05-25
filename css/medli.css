@@ -1,4 +1,7 @@
 /* Medli.css */
+html {
+	overflow-y: scroll;
+}
 body {
 	background: #fafafa;
 	color: #333;
@@ -42,22 +45,38 @@ body {
 
 div.pinitem {
 	position: absolute;
-	width: 300px;
+	width: 270px;
 	display: block;
 	border: solid 1px #999;
 	overflow: hidden;
 	background: #fff;
 	color: #656;
 	padding: 7px;
-	-webkit-transition: all 1s ease;
+	cursor: pointer;
 }
 
 div.pinitem h1 {
 	margin: 5px 0px;
 	padding: 0px;
 	font-size: 25px;
+	font-weight: normal;
 }
 
 div.pinitem img {
-	max-width: 300px;
+	max-width: 270px;
+}
+
+div.pinitem pre.prettyprint {
+	margin: 0px -8px;
+	margin-bottom: -26px;
+}
+
+pre.prettyprint {
+	background: #111;
+}
+
+#post {
+	width: 600px;
+	margin: auto;
+	position: relative;
 }

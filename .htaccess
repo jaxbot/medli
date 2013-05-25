@@ -1,0 +1,5 @@
+Options +FollowSymlinks
+RewriteEngine On
+
+RewriteRule ^articles/([A-Za-z0-9_.-]+)/?$ post.php?id=$1 [L]
+RewriteRule ^blog/?$ index.php [L]

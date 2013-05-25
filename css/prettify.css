@@ -1,0 +1,61 @@
+.pln { color: #fff }
+@media screen { 
+
+    .str { color: #c2c98f }
+    .kwd { color: #a999ac }
+    .com { color: #8a9597 }
+    .typ { color: #6e646f }
+    .lit { color: #e3d796 }
+    .pun,
+    .opn,
+    .clo { color: #8a9597 }
+    .tag { color: #a2a96f }
+    .atn { color: #e3d796 }
+    .atv { color: #303030 }
+    .dec { color: #ebc471 }
+    .var { color: #74dad9}
+    .fun { color: #d08356 }
+}
+@media print,projection { 
+    .str { color: #f6f }
+    .kwd {
+        color: #ff6;
+        font-weight: bold;
+    }
+    .com {
+        color: #6ff;
+        font-style: italic;
+    }
+    .typ {
+        color: #4f4;
+        font-weight: bold;
+    }
+    .lit { color: #f44 }
+    .pun,
+    .opn,
+    .clo { color: #44f }
+    .tag {
+        color: #ff6;
+        font-weight: bold;
+    }
+    .atn { color: #4f4 }
+    .atv { color: #f6f }
+}
+pre.prettyprint { padding: 10px }
+ol.linenums {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+li.Lf,
+li.L1,
+li.L2,
+li.L3,
+li.L5,
+li.L6,
+li.L7,
+li.L8 { list-style-type: none }
+li.L1,
+li.L3,
+li.L5,
+li.L7,
+li.L9 { background: #eee }

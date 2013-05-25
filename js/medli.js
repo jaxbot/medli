@@ -13,6 +13,7 @@ function renderPinItem(item) {
 	e.className = "pinitem";
 	e.setAttribute("data-category", item.category);
 	e.innerHTML = item.content;
+	e.onclick = function() { location.href = item.action }
 	_g("pincontainer").appendChild(e);
 
 	pinItems.push(item);
@@ -28,7 +29,7 @@ function renderBoard(filter) {
 
 	var x = 0;
 	var y = [];
-	var width = 300;
+	var width = 270;
 	var maxwidth = getWindowWidth();
 	var padding = 40;
 
@@ -47,7 +48,7 @@ function renderBoard(filter) {
 		children[i].style.top = y[x] + "px";
 		y[x] += children[i].clientHeight + padding; 
 		x++;
-		if ((x * (width + padding)) >= maxwidth) {
+		if ((x * (width + padding) + width) >= maxwidth) {
 			x = 0;
 		}
 	}
@@ -57,7 +58,11 @@ function getWindowWidth() {
 	return window.innerWidth || document.documentElement.clientWidth;
 }
 
-window.addEventListener("hashchange", function() {
+function loadBoard() {
 	renderBoard(location.hash.substring(1));
-}, true);
+}
+
+window.addEventListener("hashchange", loadBoard, true);
+window.addEventListener("load", loadBoard, true);
+window.addEventListener("resize", loadBoard, true);
 
