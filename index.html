@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Medli</title>
+<link rel='stylesheet' href='css/medli.css'>
+<script src='js/medli.js'></script>
+</head>
+<body>
+<div id='header'>
+	<h1>Jaxbot</h1>
+	<div id='info'>
+		Email: jaxbot@gmail.com
+	</div>
+	<div id='linkscontainer'><a href='#'>all</a></div>
+</div>
+<div id='pincontainer'></div>
+<script>
+	renderPinItem({ content: "<h1>Hi</h1>Here's a story about me.", 
+					category: "personal",
+					action: "somestory.html" });
+
+	renderPinItem({ content: "<img src='http://farm9.staticflickr.com/8125/8808734034_411e71d964_n.jpg'>", 
+					category: "photo",
+					action: "http://flickr.com/jaxbot" });
+
+	renderBoard(location.hash.substring(1));
+</script>
+</body>
+</html>

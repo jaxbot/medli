@@ -1,0 +1,63 @@
+/* Medli.css */
+body {
+	background: #fafafa;
+	color: #333;
+	font-family: georgia;
+	padding: 0px;
+	margin: 0px;
+}
+
+#header {
+	background: url("header.jpg");
+	height: 100px;
+	padding: 10px;
+}
+
+#header h1 {
+	color: #fff;
+	background: rgba(0,0,0,0.5);
+	display: inline-block;
+	padding: 5px 10px;;
+	margin: 5px 0px;
+}
+
+#header a {
+	color: #fff;
+}
+
+#header #info {
+	float: right;
+	color: #fff;
+}
+
+#header #linkscontainer {
+	padding-top: 10px;
+	word-spacing: 20px;
+}
+
+#pincontainer {
+	position: relative;
+	margin: 10px;
+}
+
+div.pinitem {
+	position: absolute;
+	width: 300px;
+	display: block;
+	border: solid 1px #999;
+	overflow: hidden;
+	background: #fff;
+	color: #656;
+	padding: 7px;
+	-webkit-transition: all 1s ease;
+}
+
+div.pinitem h1 {
+	margin: 5px 0px;
+	padding: 0px;
+	font-size: 25px;
+}
+
+div.pinitem img {
+	max-width: 300px;
+}
