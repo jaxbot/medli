@@ -1,10 +1,9 @@
-/* Medli.css */
 html {
 	overflow-y: scroll;
 }
 
 @media only screen and (max-device-width: 1366px) {
-@-ms-viewport{ width: 630px; }
+	@-ms-viewport{ width: 630px; }
 }
 
 body {
@@ -52,7 +51,6 @@ body {
 div.pinitem {
 	position: absolute;
 	width: 270px;
-	display: block;
 	border: solid 1px #ccc;
 	overflow: hidden;
 	background: #fff;
@@ -91,6 +89,10 @@ pre.prettyprint {
 #post h1 {
 	color: #666;
 	font-weight: normal;
+}
+
+#post img {
+	max-width: 590px !important;
 }
 
 #mainpage {

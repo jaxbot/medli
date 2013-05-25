@@ -3,17 +3,22 @@
  * Main entry point for the board system 
  */
 
-var _g = function(id) { return document.getElementById(id); }
+var cachedDOM = [];
+
+// Because I'm lazy. And it does caching, so that's good, right?
+var _g = function(id) { return cachedDOM[id] || (cachedDOM[id] = document.getElementById(id)); }
 
 var pinItems = [];
 var categories = [];
 
 function renderPinItem(item) {
 	var e = document.createElement("div");
+
 	e.className = "pinitem";
 	e.setAttribute("data-category", item.category);
 	e.innerHTML = item.content;
-	e.onclick = function() { top.location.href = item.action }
+	e.onclick = function() { top.location.href = item.action };
+
 	_g("pincontainer").appendChild(e);
 
 	pinItems.push(item);
@@ -23,14 +28,13 @@ function renderPinItem(item) {
 	}
 }
 
-function renderBoard(filter) {
-	if (typeof(filter) === "undefined")
-		var filter = "";
+function renderBoard() {
+	var filter = location.hash.substring(1);
 
 	var x = 0;
 	var y = [];
 	var width = 270;
-	var maxwidth = getWindowWidth();
+	var maxwidth = window.innerWidth || document.documentElement.clientWidth;
 	var padding = 40;
 
 	var children = _g("pincontainer").childNodes;
@@ -53,16 +57,4 @@ function renderBoard(filter) {
 		}
 	}
 }
-
-function getWindowWidth() {
-	return window.innerWidth || document.documentElement.clientWidth;
-}
-
-function loadBoard() {
-	renderBoard(location.hash.substring(1));
-}
-
-window.addEventListener("hashchange", loadBoard, true);
-window.addEventListener("load", loadBoard, true);
-window.addEventListener("resize", loadBoard, true);
 
