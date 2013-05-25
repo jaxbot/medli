@@ -6,12 +6,23 @@ require_once("include/database.php");
 <head>
 <base href='<?=$BASE?>'/>
 <title>Jaxbot</title>
+<?php 
+if ($PRODUCTION) {
+?>
+<link rel='stylesheet' href='css/min.css'>
+<script src='js/min.js'></script>
+<?php 
+} else {
+?>
 <link rel='stylesheet' href='css/medli.css'>
 <link rel='stylesheet' href='css/prettify.css'>
-<meta name="viewport" content="width=630, initial-scale=0.57, maximum-scale=0.57, user-scalable=1" />
 <script src='js/prettify_min.js'></script>
 <script src='js/medli.js'></script>
+<?php 
+}
+?>
 <meta name="keywords" content="code, blog, jaxbot, <?php echo $tags; ?>" />
+<meta name="viewport" content="width=630, initial-scale=0.57, maximum-scale=0.57, user-scalable=1" />
 <script type="text/javascript">
 var _gaq = _gaq || [];_gaq.push(['_setAccount', 'UA-10561014-2']);_gaq.push(['_trackPageview']);
 (function() {
