@@ -10,3 +10,4 @@ if (mysql_pconnect($MYSQL_DB_HOST, $MYSQL_DB_USER, $MYSQL_DB_PW)) {
 	}
 }
 
+$BASE = "http://localhost/medli/";

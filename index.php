@@ -1,20 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Medli</title>
-<link rel='stylesheet' href='css/medli.css'>
-<link rel='stylesheet' href='css/prettify.css'>
-<script src='js/medli.js'></script>
-<script src='js/prettify_min.js'></script>
-</head>
-<body>
-<div id='header'>
-	<h1>Jaxbot</h1>
-	<div id='info'>
-		Email: jaxbot@gmail.com
-	</div>
-	<div id='linkscontainer'><a href='#'>all</a></div>
-</div>
+<?php 
+    require("include/header.php");
+?>
 <div id='pincontainer'></div>
 <script>
     <?php

@@ -1,22 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-<base href='http://localhost/medli/'/>
-<title>Medli</title>
-<link rel='stylesheet' href='css/medli.css'>
-<link rel='stylesheet' href='css/prettify.css'>
-<script src='js/prettify_min.js'></script>
-</head>
-<body>
-<div id='header'>
-	<h1>Jaxbot</h1>
-	<div id='info'>
-		Email: jaxbot@gmail.com
-	</div>
-</div>
+<?php 
+	require("include/header.php");
+?>
 <div id='post'>
     <?php
-        require("include/database.php");
         require("lib/markdown.php");
         $results = mysql_query("SELECT * FROM posts WHERE id='".mysql_real_escape_string($_GET['id'])."'");
 		$row = mysql_fetch_array($results);
