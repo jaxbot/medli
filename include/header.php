@@ -8,6 +8,7 @@ require_once("include/database.php");
 <title>Jaxbot</title>
 <link rel='stylesheet' href='css/medli.css'>
 <link rel='stylesheet' href='css/prettify.css'>
+<meta name="viewport" content="width=630, initial-scale=0.57, maximum-scale=0.57, user-scalable=1" />
 <script src='js/prettify_min.js'></script>
 <script src='js/medli.js'></script>
 <meta name="keywords" content="code, blog, jaxbot, <?php echo $tags; ?>" />
