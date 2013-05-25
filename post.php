@@ -1,11 +1,13 @@
 <?php 
+	require("include/database.php");
+	$results = mysql_query("SELECT * FROM posts WHERE id='".mysql_real_escape_string($_GET['id'])."'");
+	$row = mysql_fetch_array($results);
+	$tags = $row['tags'];
 	require("include/header.php");
 ?>
 <div id='post'>
     <?php
         require("lib/markdown.php");
-        $results = mysql_query("SELECT * FROM posts WHERE id='".mysql_real_escape_string($_GET['id'])."'");
-		$row = mysql_fetch_array($results);
 		$body = markdown($row["body"]);
 	?>
 	<h1><?=$row['title']?></h1>
