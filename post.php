@@ -6,6 +6,7 @@
 	$postPage = true;
 	require("include/header.php");
 ?>
+<iframe src='./' name='mainpage' id='mainpage'></iframe>
 <div id='post'>
     <?php
         require("lib/markdown.php");
@@ -25,6 +26,16 @@
 			dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
 			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 		})();
+
+		history.pushState({ loaded: 1 }, "", location.href);
+		window.onload = function() {
+			window.onpopstate = function(state) {
+				_g("mainpage").style.display = (history.state ? "none" : "block");
+				if (!history.state) {
+					history.replaceState(null, "", "#");
+				}
+			}
+		}
 	</script>
 </div>
 <script>

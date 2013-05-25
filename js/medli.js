@@ -13,7 +13,7 @@ function renderPinItem(item) {
 	e.className = "pinitem";
 	e.setAttribute("data-category", item.category);
 	e.innerHTML = item.content;
-	e.onclick = function() { location.href = item.action }
+	e.onclick = function() { top.location.href = item.action }
 	_g("pincontainer").appendChild(e);
 
 	pinItems.push(item);
