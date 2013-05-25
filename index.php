@@ -3,7 +3,6 @@
 ?>
 <div id='pincontainer'></div>
 <script>
-    _g("linkscontainer").innerHTML = "<a href='#'>all</a>";
     <?php
         require("include/database.php");
         require("lib/markdown.php");
