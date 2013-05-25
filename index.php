@@ -3,6 +3,7 @@
 ?>
 <div id='pincontainer'></div>
 <script>
+    _g("linkscontainer").innerHTML = "<a href='#'>all</a>";
     <?php
         require("include/database.php");
         require("lib/markdown.php");
@@ -19,7 +20,7 @@
                 }
             }
 ?>
-    renderPinItem({ content: "<h1><?=$row['title']?></h1><?=$body?>", category: "articles", action: "articles/<?=$row['id']?>" });
+    renderPinItem({ content: "<h1><?=$row['title']?></h1><?=$body?>", category: "<?=$row['category']?>", action: "articles/<?=$row['id']?>" });
 <?php
         }
     ?>
