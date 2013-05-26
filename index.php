@@ -16,7 +16,7 @@
                 $body = "<img src=" . addslashes($s[0]) . ">";
             }
         } else {
-            $body = addslashes(str_replace("\r", "", str_replace("\n", "<br>", markdown($row["body"]))));
+            $body = addslashes(str_replace("\r", "", str_replace("\n", "", markdown($row["body"]))));
         }
 ?>
     renderPinItem({ content: "<h1><?=$row['title']?></h1><?=$body?>", category: "<?=$row['category']?>", action: "articles/<?=$row['id']?>" });
