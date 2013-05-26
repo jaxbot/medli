@@ -5,7 +5,7 @@ require_once("include/database.php");
 <html>
 <head>
 <base href='<?=$BASE?>'/>
-<title>Jaxbot</title>
+<title><?=($title != "" ? $title : "Jaxbot")?></title>
 <?php 
 if ($PRODUCTION) {
 ?>

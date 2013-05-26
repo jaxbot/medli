@@ -3,6 +3,7 @@
 	$results = mysql_query("SELECT * FROM posts WHERE id='".mysql_real_escape_string($_GET['id'])."'");
 	$row = mysql_fetch_array($results);
 	$tags = $row['tags'];
+	$title = $row['title'];
 	$postPage = true;
 	require("include/header.php");
 ?>
