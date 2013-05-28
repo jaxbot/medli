@@ -21,6 +21,7 @@ if ($PRODUCTION) {
 <?php 
 }
 ?>
+<meta name="referrer" content="always">
 <meta name="keywords" content="code, blog, jaxbot, <?php echo $tags; ?>" />
 <meta name="viewport" content="width=630, initial-scale=0.57, maximum-scale=0.57, user-scalable=1" />
 <script type="text/javascript">
