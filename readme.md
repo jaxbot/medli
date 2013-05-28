@@ -1,4 +1,4 @@
-The software that runs **societyofcode.com**, my personal website. Codenamed "Medli".
+The software that runs **jaxbot.me**, my personal website. Codenamed "Medli".
 
 It's experimental, but I wanted something that would make my site less of a blog and more of a place, a place where I could just put stuff for people to see, with no implication that it will update in a timely fashion.
 
