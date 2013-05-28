@@ -6,6 +6,7 @@
 <script>
 <?php
     $results = mysql_query("SELECT * FROM posts ORDER BY `time` DESC");
+    $posts = array();
     while ($row = mysql_fetch_array($results)) {
         if (strlen($row['body']) > 800) {
             $body = "";
@@ -18,6 +19,7 @@
         } else {
             $body = addslashes(str_replace("\r", "", str_replace("\n", "", markdown($row["body"]))));
         }
+        $posts[] = $row;
 ?>
     renderPinItem({ content: "<h1><?=$row['title']?></h1><?=$body?>", category: "<?=$row['category']?>", action: "articles/<?=$row['id']?>" });
 <?php
@@ -30,5 +32,13 @@
     renderBoard();
     prettyPrint();
 </script>
+<noscript>
+You don't have JavaScript enabled, so here's a static list of my articles:<br>
+<?php 
+    foreach ($posts as $post) {
+        echo "<a href='articles/" . $post['id'] . "'>" . $post['title'] . "</a><br>";
+    }
+?>
+</noscript>
 </body>
 </html>
