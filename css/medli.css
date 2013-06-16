@@ -84,6 +84,7 @@ pre.prettyprint {
 	width: 600px;
 	margin: auto;
 	position: relative;
+	line-height: 28px;
 }
 
 #post h1 {
@@ -93,6 +94,8 @@ pre.prettyprint {
 
 #post img {
 	max-width: 590px !important;
+	position: relative;
+	margin: auto;
 }
 
 #mainpage {
