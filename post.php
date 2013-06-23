@@ -31,6 +31,7 @@
 
 		history.pushState({ loaded: 1 }, "", location.href);
 		window.onload = function() {
+            if (navigator.userAgent.indexOf("Mobile") !== -1) return;
 			window.onpopstate = function(state) {
 				_g("mainpage").style.display = (history.state ? "none" : "block");
 				if (!history.state) {
