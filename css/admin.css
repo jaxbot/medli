@@ -1,0 +1,19 @@
+
+body {
+	padding: 10px;
+	position: relative;
+	margin: auto;
+	width: 700px;
+}
+textarea.editor {
+	width: 750px;
+	height: 400px;
+	border: solid 1px #787878;
+	padding: 4px;
+	margin: 0px;
+	overflow: auto;
+}
+input.title {
+	width: 756px;
+	font-size: 22px;
+}

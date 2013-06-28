@@ -1,78 +1,21 @@
 <?php
 require("include/database.php");
-if ($_SERVER['PHP_AUTH_USER'] != "Jaxbot" or $_SERVER['PHP_AUTH_PW'] != $PASSWORD) {
-	header('WWW-Authenticate: Basic realm="soc"');
-	header('HTTP/1.0 401 Unauthorized');
-	echo 'No.';
-	exit;
-}
+require("include/auth.php");
 
 ?>
 <!DOCTYPE html>
 <html>
 	<head>
 		<link rel='stylesheet' href='css/medli.css'>
+		<link rel='stylesheet' href='css/admin.css'>
 		<base href='<?php echo $BASE; ?>'>
-		<style>
-			body {
-				padding: 10px;
-				position: relative;
-				margin: auto;
-				width: 700px;
-			}
-			div.controlbar {
-				width: 850px;
-				padding: 5px;
-				background-color: #aeaeae;
-			}
-			textarea.editor {
-				width: 850px;
-				height: 400px;
-				border: solid 1px #787878;
-				padding: 4px;
-				margin: 0px;
-				overflow: auto;
-			}
-			input.title {
-				width: 856px;
-				font-size: 22px;
-			}
-		</style>
 		<script>
 			function confirmdelete() {
 				return confirm("Are you sure you want to delete this post?");
 			}
-			function openWindow() {
-				return window.open("", "", "width=400,height=300,location=no,screenX=300,screenY=400");
-			}
-			function insertCode() {
-				var wnd = openWindow();
-				wnd.document.write("<form><textarea name='content' id='content' style='font-face: lucida console; font-size: 11px; width: 99%; height: 95%;'></textarea><br><input type='button' onClick='window.opener.addCode(content.value);' value='Insert'>");
-			}
-			function insertImage() {
-				var wnd = openWindow();
-				wnd.document.write("<form action='uploadimg.php' method='POST' enctype='multipart/form-data'><input type='file' name='file'><br><input type='submit' value='Upload and insert'></form>");
-			}
 			function addImage(data) {
 				document.getElementById("body").value += "<p><img src='<?php echo $base; ?>" + data + "'></p>";
 			}
-			function addCode(data) {
-				data = data.replace(/</g, "&lt;");
-				data = data.replace(/>/g, "&gt;");
-				
-				var id = Math.random() * 10000000;
-				
-				var lines = data.split("\n");
-				var code = "";
-				
-				for (i = 0; i < lines.length; i++) {
-					code += "\t" + lines[i] + "\n";
-				}
-				
-				document.getElementById("body").value += code;
-				
-			}
-			
 			function setContent(html) {
 				document.getElementById("editor").innerHTML = html;
 			}
@@ -140,9 +83,6 @@ if ($_SERVER['PHP_AUTH_USER'] != "Jaxbot" or $_SERVER['PHP_AUTH_PW'] != $PASSWOR
 				?>
 				<form action='admin.php<?php if ($_GET['id'] != "new") { ?>?edit=true<?php } ?>' method='POST'>
 					<input type='text' class='title' name='title' value='<?php echo $data['title']; ?>' <?php if ($_GET['id'] == "new") { ?> onKeyUp='updateId(this.value);' <?php } ?>>
-					<div class='controlbar'>
-					<a href='javascript:insertCode();'>Code</a> <a href='javascript:insertImage();'>Image</a>
-					</div>
 					<textarea name='body' onkeydown='preventTab(event,this);' id='body' class='editor'><?php echo $data['body']; ?></textarea>
 					<br>
 					Tags: <input type='text' name='tags' value='<?php echo $data['tags']; ?>'> 
@@ -150,7 +90,9 @@ if ($_SERVER['PHP_AUTH_USER'] != "Jaxbot" or $_SERVER['PHP_AUTH_PW'] != $PASSWOR
 					Category: <input type='text' name='category' value='<?php echo $data['category']; ?>'><br>
 					<input type='submit' value='Save' name='save' onClick='body.value=document.getElementById("editor").innerHTML;'>
 				</form>
-				
+				<iframe name='datapusher' id='datapusher' style='display: none'></iframe>
+				<h2>Upload image</h2>
+				<form action='uploadimg.php' method='POST' enctype='multipart/form-data' target='datapusher'><input type='file' name='file'><br><input type='submit' value='Upload and insert'></form>
 				<?php
 			
 		} else {
