@@ -23,7 +23,7 @@ body {
 
 #header {
 	background: #fff;
-	height: 60px;
+	height: 90px;
 	padding: 10px;
 	box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
 	position: fixed;
@@ -31,12 +31,13 @@ body {
 	left: 0px;
 	right: 0px;
 	z-index: 10;
+	text-align: center;
 }
 
 #header h1 {
 	display: inline-block;
-	padding: 5px 10px;;
-	margin: 5px 0px;
+	margin: 10px 0px;
+	padding: 0px;
 	color: #555;
 	font-weight: normal;
 }
@@ -48,19 +49,22 @@ body {
 }
 
 #info {
-	float: right;
+	position: fixed;
+	right: 15px;
+	top: 26px;
 	color: #fff;
 }
 
 #header #linkscontainer {
 	word-spacing: 30px;
-	display: inline-block;
-	padding-left: 30px;
+	display: block;
 	font-size: 20px;
+	margin: 0px;
+	padding: 0px;
 }
 
 #headerpad { 
-	height: 90px;
+	height: 115px;
 }
 
 #pincontainer {
