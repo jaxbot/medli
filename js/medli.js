@@ -33,9 +33,14 @@ function renderBoard() {
 
 	var x = 0;
 	var y = [];
-	var width = 270;
+	var width = 285;
 	var maxwidth = window.innerWidth || document.documentElement.clientWidth;
-	var padding = 40;
+
+	var n = Math.ceil(maxwidth / (width + 20)) - 1;
+	var totalWidth = (width) * n;
+	var padding = (maxwidth - totalWidth) / (n + 2);
+	var verticalPadding = 40;
+	if (padding < 20) padding = 20;
 
 	var children = _g("pincontainer").childNodes;
 	for (var i = 0; i < children.length; i++) {
@@ -48,11 +53,11 @@ function renderBoard() {
 
 		if (!y[x]) y[x] = 0;
 
-		children[i].style.left = (x * (width + padding)) + "px";
+		children[i].style.left = padding + (x * (width + padding)) + "px";
 		children[i].style.top = y[x] + "px";
-		y[x] += children[i].clientHeight + padding; 
+		y[x] += children[i].clientHeight + verticalPadding; 
 		x++;
-		if ((x * (width + padding) + width) >= maxwidth) {
+		if (padding + (x * (width + padding) + width) >= maxwidth) {
 			x = 0;
 		}
 	}
