@@ -748,7 +748,7 @@ class Markdown_Parser {
 			}
 		
 			$link_text = $this->runSpanGamut($link_text);
-			$result .= ">$link_text</a>";
+			$result .= " target='_blank'>$link_text</a>";
 			$result = $this->hashPart($result);
 		}
 		else {
@@ -771,7 +771,7 @@ class Markdown_Parser {
 		}
 		
 		$link_text = $this->runSpanGamut($link_text);
-		$result .= ">$link_text</a>";
+		$result .= " target='_blank'>$link_text</a>";
 
 		return $this->hashPart($result);
 	}
