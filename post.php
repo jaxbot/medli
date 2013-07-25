@@ -4,6 +4,7 @@
 	$row = mysql_fetch_array($results);
 	$tags = $row['tags'];
 	$title = $row['title'];
+	$id = $row['id'];
 	$postPage = true;
 	require("include/header.php");
 ?>
