@@ -21,7 +21,7 @@ require("include/auth.php");
 			}
 			function updateId(str) {
 				str = str.toLowerCase();
-				str = str.replace(/[^\w\s]|_/g, "").replace(/\s+/g, "_");
+				str = str.replace(/[^\w\s]|_/g, "").replace(/\s+/g, "-");
 				
 				var d = new Date();
 				
