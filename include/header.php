@@ -42,8 +42,12 @@ var _gaq = _gaq || [];_gaq.push(['_setAccount', 'UA-10561014-2']);_gaq.push(['_t
 <script src='//platform.twitter.com/widgets.js' async='true'></script>
 </head>
 <body>
-<div id='header'>
-    <a href='./'><h1 title='Developer. 18. Node, HTML5, CSS3. Friendly; talk to me'>Jaxbot</h1></a>
+<div id='header' itemscope itemtype='http://schema.org/Person'>
+    <a href='./'><h1 title='Developer. 18. Node, HTML5, CSS3. Friendly; talk to me' itemprop='name'>Jaxbot</h1></a>
+	<div style='display:none'>
+		<img itemprop='image' src='http://jaxbot.me/me.jpg'>
+		<a href="https://plus.google.com/100737671703797017594?rel=author">Google</a>
+	</div>
     <div id='info'>
         <?php if ($postPage) { ?>
         <a href="https://twitter.com/share" class="twitter-share-button" data-via="Jaxbot" data-size="large" data-count="none">Tweet</a>
