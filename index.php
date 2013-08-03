@@ -2,6 +2,7 @@
     require("include/header.php");
     require("lib/markdown.php");
 ?>
+<div id='pinbackground'></div>
 <div id='pincontainer'></div>
 <script>
 <?php
