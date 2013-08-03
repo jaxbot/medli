@@ -56,8 +56,8 @@ var _gaq = _gaq || [];_gaq.push(['_setAccount', 'UA-10561014-2']);_gaq.push(['_t
     </div>
     <div id='linkscontainer'>
         <a href='./'>home</a>
+        <a href='articles/aboutme'>about</a>
         <a href='http://twitter.com/jaxbot'>twitter</a>
-        <a href='mailto:jaxbot@gmail.com' title='jaxbot, at gmail'>contact</a>
     </div>
 </div>
 <div id='headerpad'></div>
