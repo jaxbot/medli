@@ -1,4 +1,4 @@
-The software that runs **jaxbot.me**, my personal website. Codenamed "Medli".
+The software that I wrote as a functional, templated blog for my personal website, **jaxbot.me**. Codenamed "Medli", and has been replaced since then with static page rendering.
 
 It's experimental, but I wanted something that would make my site less of a blog and more of a place, a place where I could just put stuff for people to see, with no implication that it will update in a timely fashion.
 
